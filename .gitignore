@@ -1,2 +1,6 @@
+*.pdf
+*.html
+*.jpg
+*.pyc
 *.png
-*.ipynb_checkpoints*
+*checkpoints*
