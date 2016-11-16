@@ -1,6 +1,8 @@
+*~
 *.pdf
 *.html
 *.jpg
 *.pyc
 *.png
 *checkpoints*
+*.fits
