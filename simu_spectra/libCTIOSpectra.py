@@ -46,7 +46,7 @@ def Get_QE(filename):
    
     data_qe=ascii.read(filename) 
     x=data_qe["col1"]
-    y=data_qe["col2"]
+    y=data_qe["col2"]/100.
     indexes = np.where(np.logical_and(x>250.,x<1200.)) 
     return x[indexes],y[indexes]  
 #------------------------------------------------------------------------------
@@ -137,7 +137,7 @@ if __name__ == "__main__":
     # -------------------
     PlotSED()
 
-    #PlotQE()
+    PlotQE()
     
     PlotAtmosphere()
     
