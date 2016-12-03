@@ -33,17 +33,39 @@ import libCTIOSpectra as transp
 filepath_qe='../Telescope'
 filename_qe = "qecurve.txt"  
 
-filepath_sed='/Users/dagoret-campagnesylvie/MacOsX/LSST/MyWork/GitHub/CTIOData2016/SEDCalspec_HD14943'
-filename_sed='hd14943_stis_003.fits'
+
+##    OBJECT HD14943
+## 
+
+#obj_name='HD14943'
+
+#filepath_sed='/Users/dagoret-campagnesylvie/MacOsX/LSST/MyWork/GitHub/CTIOData2016/SEDCalspec_HD14943'
+#filename_sed='hd14943_stis_003.fits'
+
+
+#filepath_atm="/Users/dagoret-campagnesylvie/MacOsX/LSST/MyWork/GitHub/CTIOAna2016/atmosphere/simulations/RT/2.0/CT/pp/us/sa/rt/y2016/m10/out"
+#filename_atm="RT_CT_pp_us_sa_rt_HD14943_Nev1_y2016_m10_aver.OUT"
+#filename_keysel= "^RT_CT_pp_us_sa_rt_HD14943_Nev(.+)_y2016_m.*OUT$"  # regular expressioon
+
+#filepath_lb='/Users/dagoret-campagnesylvie/MacOsX/LSST/MyWork/GitHub/CTIOAna2016/ana_2016_11'
+#filename_lb='logbk_HD14943_ctioNov2016.fits'
+
+
+##    OBJECT mucol
+## 
+obj_name='mucol'
+
+filepath_sed='/Users/dagoret-campagnesylvie/MacOsX/LSST/MyWork/GitHub/CTIOData2016/SEDCalspec_mucol/'
+filename_sed='mucol_stis_003.fits'
 
 
 filepath_atm="/Users/dagoret-campagnesylvie/MacOsX/LSST/MyWork/GitHub/CTIOAna2016/atmosphere/simulations/RT/2.0/CT/pp/us/sa/rt/y2016/m10/out"
 filename_atm="RT_CT_pp_us_sa_rt_HD14943_Nev1_y2016_m10_aver.OUT"
-obj_name='HD14943'
-
+filename_keysel="^RT_CT_pp_us_sa_rt_mucol_Nev(.+)_y2016_m.*OUT$"  # regular expressioon
 
 filepath_lb='/Users/dagoret-campagnesylvie/MacOsX/LSST/MyWork/GitHub/CTIOAna2016/ana_2016_11'
-filename_lb='logbk_HD14943_ctioNov2016.fits'
+filename_lb='logbk_mucol_ctioNov2016.fits'
+
 
 #-------------------------------------------------------------------------------
 
@@ -61,24 +83,33 @@ if __name__ == "__main__":
     atm_files = [f for f in os.listdir(filepath_atm) if f.endswith('aver.OUT')] 
     atm_files=np.array(atm_files)
     
+    print 
     # extract the number of files according which the filenames must be sorted
     number_files = []
+    selected_files = []
     for file in atm_files:
-        num_str=re.findall('^RT_CT_pp_us_sa_rt_HD14943_Nev(.+)_y2016_m.*OUT$',file)[0]   
-        number_files.append(int(num_str))
+        num_str=re.findall('^RT_CT_pp_us_sa_rt_mucol_Nev(.+)_y2016_m.*OUT$',file)
+        #num_str=re.findall(filename_keysel,file)[0]
+        if len(num_str) != 0:
+            print "found file {} !!!! ".format(file) 
+            number_files.append(int(num_str[0]))
+            selected_files.append(file)
     number_files=np.array(number_files)
-   
+    selected_files=np.array(selected_files)
     #print atm_files
-    #print number_files
+    print 'original file numbering= =',number_files
     
     # indexes in order to sort the number_files
     ordered_number=np.argsort(number_files)      
+    print 'mapping to order files = ',ordered_number    
     
     # check the ordering according ordered_number is OK
     new_numbers=number_files[ordered_number]
+    print 'check ordering is OK = ', new_numbers
     
     # order the filenames according ordered_number
-    ordered_files=atm_files[ordered_number]
+    ordered_files=selected_files[ordered_number]
+    print 'ordered_files = ',  ordered_files
     
     # get quantum efficiency of the detector
     fullfilename_qe=os.path.join(filepath_qe,filename_qe)  
