@@ -37,7 +37,7 @@ filename_qe = "qecurve.txt"
 ##    OBJECT HD14943
 ## 
 
-#obj_name='HD14943'
+#obj_name='HD14943'  # November 2016
 
 #filepath_sed='/Users/dagoret-campagnesylvie/MacOsX/LSST/MyWork/GitHub/CTIOData2016/SEDCalspec_HD14943'
 #filename_sed='hd14943_stis_003.fits'
@@ -51,21 +51,32 @@ filename_qe = "qecurve.txt"
 #filename_lb='logbk_HD14943_ctioNov2016.fits'
 
 
-##    OBJECT mucol
+##    OBJECT mucol # November 2016
 ## 
-obj_name='mucol'
+#obj_name='mucol'
 
-filepath_sed='/Users/dagoret-campagnesylvie/MacOsX/LSST/MyWork/GitHub/CTIOData2016/SEDCalspec_mucol/'
-filename_sed='mucol_stis_003.fits'
+#filepath_sed='/Users/dagoret-campagnesylvie/MacOsX/LSST/MyWork/GitHub/CTIOData2016/SEDCalspec_mucol/'
+#filename_sed='mucol_stis_003.fits'
 
 
-filepath_atm="/Users/dagoret-campagnesylvie/MacOsX/LSST/MyWork/GitHub/CTIOAna2016/atmosphere/simulations/RT/2.0/CT/pp/us/sa/rt/y2016/m10/out"
-filename_atm="RT_CT_pp_us_sa_rt_HD14943_Nev1_y2016_m10_aver.OUT"
-filename_keysel="^RT_CT_pp_us_sa_rt_mucol_Nev(.+)_y2016_m.*OUT$"  # regular expressioon
+#filepath_atm="/Users/dagoret-campagnesylvie/MacOsX/LSST/MyWork/GitHub/CTIOAna2016/atmosphere/simulations/RT/2.0/CT/pp/us/sa/rt/y2016/m10/out"
+#filename_atm="RT_CT_pp_us_sa_rt_HD14943_Nev1_y2016_m10_aver.OUT"
+#filename_keysel="^RT_CT_pp_us_sa_rt_mucol_Nev(.+)_y2016_m.*OUT$"  # regular expressioon
 
-filepath_lb='/Users/dagoret-campagnesylvie/MacOsX/LSST/MyWork/GitHub/CTIOAna2016/ana_2016_11'
-filename_lb='logbk_mucol_ctioNov2016.fits'
+#filepath_lb='/Users/dagoret-campagnesylvie/MacOsX/LSST/MyWork/GitHub/CTIOAna2016/ana_2016_11'
+#filename_lb='logbk_mucol_ctioNov2016.fits'
 
+obj_name='HD205905'  #August 2016
+
+filepath_sed='/Users/dagoret-campagnesylvie/MacOsX/LSST/MyWork/GitHub/CTIOData2016/SEDCalspec_HD205905/'
+filename_sed='hd205905_stis_003.fits'
+
+
+filepath_atm="/Users/dagoret-campagnesylvie/MacOsX/LSST/MyWork/GitHub/CTIOAna2016/atmosphere/simulations/RT/2.0/CT/pp/us/sa/rt/y2016/m08/out"
+filename_keysel="^RT_CT_pp_us_sa_rt_HD205905_Nev(.+)_y2016_m.*OUT$"  # regular expressioon
+
+filepath_lb='/Users/dagoret-campagnesylvie/MacOsX/LSST/MyWork/GitHub/CTIOAna2016/ana_2016_08'
+filename_lb='logbk_HD205905_ctioAugust2016.fits'
 
 #-------------------------------------------------------------------------------
 
@@ -88,7 +99,8 @@ if __name__ == "__main__":
     number_files = []
     selected_files = []
     for file in atm_files:
-        num_str=re.findall('^RT_CT_pp_us_sa_rt_mucol_Nev(.+)_y2016_m.*OUT$',file)
+        num_str=re.findall('^RT_CT_pp_us_sa_rt_HD205905_Nev(.+)_y2016_m.*OUT$',file)
+        #num_str=re.findall('^RT_CT_pp_us_sa_rt_mucol_Nev(.+)_y2016_m.*OUT$',file)
         #num_str=re.findall(filename_keysel,file)[0]
         if len(num_str) != 0:
             print "found file {} !!!! ".format(file) 
