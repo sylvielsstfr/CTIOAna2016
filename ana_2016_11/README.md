@@ -25,6 +25,11 @@ corrected for OverScan and Trimming.
 
 - FindOptRot_HD14943.ipynb : calculation of angle of rotation
 
+## Step 5:
+
+- Extract_Spectrum_HD14943.ipynb : Really extract the spectrum
+(per second)
+
 
 
 To run python choose anaconda astropyphys
