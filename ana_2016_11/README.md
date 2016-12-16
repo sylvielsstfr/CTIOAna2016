@@ -28,9 +28,13 @@ corrected for OverScan and Trimming.
 ## Step 5:
 
 - Extract_Spectrum_HD14943.ipynb : Really extract the spectrum
-(per second)
+(per second). 
+	- In fact extract the two +1/-1 orders
 
 
+## Step 6:
+
+- Fit_Spectrum_HD14943.ipynb : Does the fit to get the calibration curve
 
 To run python choose anaconda astropyphys
 	
