@@ -34,7 +34,9 @@ corrected for OverScan and Trimming.
 
 ## Step 6:
 
-- Fit_Spectrum_HD14943.ipynb : Does the fit to get the calibration curve
+- Fit_Spectrum_HD14943.ipynb : Does the fit to get the calibration curve.
+   It saves the result of the fit inside a fits file.
+
 
 To run python choose anaconda astropyphys
 	
