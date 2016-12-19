@@ -41,7 +41,7 @@ corrected for OverScan and Trimming.
    It saves the result of the fit inside a fits file.
    
 ## Setep 8 :
-- Does the calibration of the dispersive axis on the data
+- Calibrate_Spectrum_HD14943.ipynb : Does the calibration of the dispersive axis on the data and save calibrated data in fits file.
 
 
 To run python choose anaconda astropyphys
