@@ -31,11 +31,17 @@ corrected for OverScan and Trimming.
 (per second). 
 	- In fact extract the two +1/-1 orders
 
-
 ## Step 6:
+- View_SimSpectrum_HD14943.ipynb : To view simulated spectra and use a single file to save simulated spectra
+
+
+## Step 7:
 
 - Fit_Spectrum_HD14943.ipynb : Does the fit to get the calibration curve.
    It saves the result of the fit inside a fits file.
+   
+## Setep 8 :
+- Does the calibration of the dispersive axis on the data
 
 
 To run python choose anaconda astropyphys
