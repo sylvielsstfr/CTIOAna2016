@@ -43,6 +43,14 @@ corrected for OverScan and Trimming.
 ## Setep 8 :
 - Calibrate_Spectrum_HD14943.ipynb : Does the calibration of the dispersive axis on the data and save calibrated data in fits file.
 
+## Step 9:
+- CompareCalibSim_Spectrum_HD14943_ipynb : Compare reconstructed spectrum with simulation. Note the simulation must be smoothed compared to data spectrum.
+
+
+## STEP 10:
+- AnaCalibDataSim_Spectrum_HD14943.ipynb :
+-Work on spectra to derive atmospheric studies
+
 
 To run python choose anaconda astropyphys
 	
