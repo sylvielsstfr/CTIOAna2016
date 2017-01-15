@@ -47,7 +47,7 @@ corrected for OverScan and Trimming.
 - CompareCalibSim_Spectrum_HD14943_ipynb : Compare reconstructed spectrum with simulation. Note the simulation must be smoothed compared to data spectrum.
 
 
-## STEP 10:
+## Step 10:
 - AnaCalibDataSim_Spectrum_HD14943.ipynb :
 -Work on spectra to derive atmospheric studies
 
