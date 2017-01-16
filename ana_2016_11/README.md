@@ -49,8 +49,9 @@ corrected for OverScan and Trimming.
 
 ## Step 10:
 - AnaCalibDataSim_Spectrum_HD14943.ipynb :
--Work on spectra to derive atmospheric studies
-
+- Work on spectra to derive atmospheric studies
+- Shows cloud grey attenuation
+- Shows H2O variation
 
 To run python choose anaconda astropyphys
 	
